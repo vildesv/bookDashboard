@@ -24,69 +24,69 @@
     <main>
       <!-- Legge til nye bøker -->
       <section id="add-book-section">
-        <h2>Add New Book</h2>
+        <h2>Legg til bok</h2>
         <form id="book-form">
           <input
             type="text"
             id="title"
             name="bookTitle"
-            placeholder="Book Title"
+            placeholder="Boktittel"
             required
           />
           <input
             type="text"
             id="author"
             name="author"
-            placeholder="Author"
+            placeholder="Forfatter"
             required
           />
           <input
             type="text"
             id="genre"
             name="genre"
-            placeholder="Genre"
+            placeholder="Sjanger"
             required
           />
           <input
             type="number"
             id="pages"
             name="pages"
-            placeholder="Pages"
+            placeholder="Sider"
             required
           />
-          <button type="submit">Add Book</button>
+          <button type="submit">Legg til bok</button>
         </form>
       </section>
 
       <!-- Seksjon for filtrering og sortering -->
       <section id="filter-sort-section">
-        <h2>Filter & Sort</h2>
+        <h2>Filtrer & Sorter</h2>
         <select id="filter-genre">
-          <option value="">All Genres</option>
+          <option value="">Alle sjangre</option>
         </select>
         <select id="sort-options">
-          <option value="title">Sort by Title</option>
-          <option value="author">Sort by Author</option>
-          <option value="genre">Sort by Genre</option>
-          <option value="pages">Sort by Pages</option>
+          <option value="title">Sorter etter Tittel</option>
+          <option value="author">Sorter etter Forfatter</option>
+          <option value="genre">Sorter etter Sjanger</option>
+          <option value="pages">Sorter etter Sider</option>
         </select>
       </section>
 
       <!-- Liste over alle bøker -->
       <section id="book-list-section">
-        <h2>My Library</h2>
+        <h2>Mitt bibliotek</h2>
         <ul id="book-list"></ul>
       </section>
 
       <!-- Statistikk -->
       <section id="stats-section" class="stats-section">
-        <h2>Stats & Summary</h2>
+        <h2>Statistikk</h2>
         <p id="stats-output"></p>
       </section>
 
       <!-- Knapp for å slette all lagret data -->
       <section>
-        <button id="clear-all">Clear All Books</button>
+        <button id="clear-all">Slett alle bøker</button>
       </section>
     </main>
 

@@ -1,4 +1,7 @@
-##  📚 bookDashboard
+##  📚 bookDashboard 
+
+Tittel: Pages of the Shire <br>
+Undertittel: "One dashboard to track them all..."
 
 En liten webapplikasjon for å holde oversikt over bøker som er lest, med funksjoner som:
 - Legg til bok med tittel, forfatter, sjanger og antall sider

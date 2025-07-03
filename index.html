@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Book Dashboard - Pages from the Shire</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link til CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Tittel og undertittel -->
+    <header>
+      <h1>Pages from the Shire</h1>
+      <p class="subtitle">"One dashboard to track them all..."</p>
+    </header>
+
+    <main>
+      <!-- Legge til nye bøker -->
+      <section id="add-book-section">
+        <h2>Add New Book</h2>
+        <form id="book-form">
+          <input
+            type="text"
+            id="title"
+            name="bookTitle"
+            placeholder="Book Title"
+            required
+          />
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="Author"
+            required
+          />
+          <input
+            type="text"
+            id="genre"
+            name="genre"
+            placeholder="Genre"
+            required
+          />
+          <input
+            type="number"
+            id="pages"
+            name="pages"
+            placeholder="Pages"
+            required
+          />
+          <button type="submit">Add Book</button>
+        </form>
+      </section>
+
+      <!-- Seksjon for filtrering og sortering -->
+      <section id="filter-sort-section">
+        <h2>Filter & Sort</h2>
+        <select id="filter-genre">
+          <option value="">All Genres</option>
+        </select>
+        <select id="sort-options">
+          <option value="title">Sort by Title</option>
+          <option value="author">Sort by Author</option>
+          <option value="genre">Sort by Genre</option>
+          <option value="pages">Sort by Pages</option>
+        </select>
+      </section>
+
+      <!-- Liste over alle bøker -->
+      <section id="book-list-section">
+        <h2>My Library</h2>
+        <ul id="book-list"></ul>
+      </section>
+
+      <!-- Statistikk -->
+      <section id="stats-section" class="stats-section">
+        <h2>Stats & Summary</h2>
+        <p id="stats-output"></p>
+      </section>
+
+      <!-- Knapp for å slette all lagret data -->
+      <section>
+        <button id="clear-all">Clear All Books</button>
+      </section>
+    </main>
+
+    <!-- Link til JavaScript filen -->
+    <script src="app.js" defer></script>
+  </body>
+</html>

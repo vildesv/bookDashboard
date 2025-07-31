@@ -10,15 +10,32 @@ let books = JSON.parse(localStorage.getItem('books')) || [];
 
 // Lag HTML-visning av en bok
 function renderBooks(bookArray) {
-  bookList.innerHTML = ''; // Tøm gammel visning
+  bookList.innerHTML = '';
+
   bookArray.forEach(({ id, bookTitle, author, genre, pages }) => {
     const li = document.createElement('li');
-    li.innerHTML = `
-      <strong>${bookTitle}</strong> av ${author} <br/>
-      Sjanger: ${genre} – Sider: ${pages} <br/>
-      <button onclick="deleteBook('${id}')">Slett</button>
-    `;
-    bookList.append(li);
+
+    const titleEl = document.createElement('strong');
+    titleEl.textContent = bookTitle;
+
+    const authorText = document.createTextNode(` av ${author}`);
+    const br1 = document.createElement('br');
+
+    const infoText = document.createTextNode(`Sjanger: ${genre} – Sider: ${pages}`);
+    const br2 = document.createElement('br');
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Slett';
+    deleteBtn.addEventListener('click', () => deleteBook(id));
+
+    li.appendChild(titleEl);
+    li.appendChild(authorText);
+    li.appendChild(br1);
+    li.appendChild(infoText);
+    li.appendChild(br2);
+    li.appendChild(deleteBtn);
+
+    bookList.appendChild(li);
   });
 }
 
@@ -88,13 +105,22 @@ function updateStats() {
 
 // Oppdater filtervalg basert på sjangre i listen
 function updateFilterOptions() {
+  // Tøm alle eksisterende valg
+  while (genreFilter.firstChild) {
+    genreFilter.removeChild(genreFilter.firstChild);
+  }
+
+  const allOption = document.createElement('option');
+  allOption.value = '';
+  allOption.textContent = 'Alle sjangre';
+  genreFilter.appendChild(allOption);
+
   const genres = [...new Set(books.map(book => book.genre))]; // Finn unike sjangre
-  genreFilter.innerHTML = '<option value="">Alle sjangre</option>';
   genres.forEach(genre => {
     const option = document.createElement('option');
     option.value = genre;
     option.textContent = genre;
-    genreFilter.append(option);
+    genreFilter.appendChild(option);
   });
 }
 
